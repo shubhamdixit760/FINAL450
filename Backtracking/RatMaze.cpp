@@ -17,7 +17,7 @@ class Solution{
     vector<vector<int>>vis;
     bool isSafe(vector<vector<int>>&m,int x,int y,int N)
     {
-        if(x < N && x >= 0 && y < N && y>=0 && m[y][x]==1 && !vis[x][y])  
+        if(x < N && x >= 0 && y < N && y>=0 && m[y][x]==1 && !vis[y][x])  
             return true;
             
         return false;
@@ -35,9 +35,9 @@ class Solution{
        {
            if(isSafe(m,x+dx[i],y+dy[i],N))
            {
-              vis[x+dx[i]][y+dy[i]] = 1;
+              vis[y+dy[i]][x+dx[i]] = 1;
               res = solve(m,x+dx[i],y+dy[i],N,osf+dir[i]) || res;
-              vis[x+dx[i]][y+dy[i]] = 0;
+              vis[y+dy[i]][x+dx[i]] = 0;
            }
        }
        return res;
