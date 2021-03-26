@@ -66,6 +66,9 @@ class Solution{
 
 int main() {
     int t;
+    char board[2][3] = {{'.','.','\0'},{'Q','Q','\0'}};
+    string s(board[0]);
+    cout << s << "\n";
     cin >> t;
     while (t--) {
         int n;
@@ -85,4 +88,4 @@ int main() {
         cout << endl;
     }
     return 0;
-}  // } Driver Code Ends
+}
